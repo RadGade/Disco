@@ -2,37 +2,16 @@
     // your script goes here
 import { push } from 'svelte-spa-router';
 import  { get } from 'svelte/store'
-import {authStore} from '../authStore'
-import {create, auth} from '../blue'
 let alias, pwd
 import { getNotificationsContext } from 'svelte-notifications';
 const { addNotification } = getNotificationsContext();
  async function login(){
   console.log(alias, pwd)
-  await auth(alias, pwd).then(async user => {
-    await authStore.set(true)
-    push('/test')
-    console.log(user)
-  }).catch(err => {
-        addNotification({
-    id: 'uniqNotificationId',
-    text: err,
-    position: 'top-center',
-    type: 'danger',
-    removeAfter: 3000,
-  });
-  })
+window.localStorage.setItem('isAuth', false);
 }
 
  async function register(){
   console.log(alias, pwd)
-  await create(alias, pwd).then(async user => {
-      await auth(alias, pwd).then(async user => {
-    await authStore.set(true)
-    push('/test')
-    console.log(user)
-  })
-  }).catch(err => console.log(err))
 }
 </script>
 

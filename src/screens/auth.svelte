@@ -7,7 +7,8 @@ import { getNotificationsContext } from 'svelte-notifications';
 const { addNotification } = getNotificationsContext();
  async function login(){
   console.log(alias, pwd)
-window.localStorage.setItem('isAuth', false);
+await window.localStorage.setItem('isAuth', true);
+push('/rooms')
 }
 
  async function register(){

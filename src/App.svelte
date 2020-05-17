@@ -51,7 +51,6 @@
     background: linear-gradient(90deg, #232526 0%, #414345 50%);
     height: 100vh;
     width: 100%;
-    overflow: hidden;
 
   }
 </style>

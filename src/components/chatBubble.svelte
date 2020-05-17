@@ -1,0 +1,122 @@
+<script>
+    // your script goes here
+</script>
+
+<style type="css">
+* {
+    position: absolute;
+	 margin: 0;
+	 font-family: "Roboto", sans-serif;
+     bottom: 10%;
+	 border: 0;
+	 font-size: 100%;
+	 font-style: inherit;
+	 font-weight: inherit;
+	 margin: 0;
+	 padding: 0;
+	 vertical-align: baseline;
+	 overflow: hidden;
+	 transition: background-color 0.17s ease, color 0.17s ease;
+}
+ .app {
+	 display: flex;
+}
+ 
+ .chat-box {
+	 height: calc(100% - 48px);
+     width: 80%;
+	 overflow-y: auto;
+	 position: fixed;
+}
+ .chat-box::-webkit-scrollbar {
+	 width: 14px;
+	 position: absolute;
+}
+ .chat-box::-webkit-scrollbar-thumb, ::-webkit-scrollbar-track-piece {
+	 background-clip: padding-box;
+	 border: 2.5px solid #36393f;
+	 border-radius: 7px;
+	 background-clip: padding-box;
+}
+ .chat-box::-webkit-scrollbar-thumb {
+	 background-color: #181a1c;
+}
+ .chat-box::-webkit-scrollbar-track-piece {
+	 background-color: rgba(0, 0, 0, 0.25);
+}
+ .message-group {
+	 margin: 10px 20px;
+	 padding: 10px 1px;
+}
+ .header-group > .avatar img {
+	 position: absolute;
+	 border-radius: 50%;
+	 height: 45px;
+	 width: 45px;
+}
+ .header-group > .header {
+	 margin-left: 60px;
+	 padding-top: 3px;
+	 color: #fff;
+	 height: 1.3em;
+}
+ .header-group > .header > .timestamp {
+	 color: rgba(255, 255, 255, 0.2);
+	 font-size: 0.75rem;
+	 font-weight: 400;
+	 letter-spacing: 0;
+	 margin-left: 0.3rem;
+}
+ .message {
+	 color: #dcddde;
+	 margin-left: 60px;
+	 padding-right: 10px;
+}
+ .message > .content {
+	 margin-top: 4px;
+	 font-size: 0.9375rem;
+	 color: #dcddde;
+}
+ .divider {
+	 border: none;
+	 border-bottom: 1px solid transparent;
+	 margin: 20px 0px -20px;
+	 border-bottom-color: rgba(255, 255, 255, 0.04);
+}
+
+ /* code.inline {
+	 border: none;
+	 border-radius: 3px;
+	 font-family: Consolas, Liberation Mono, Menlo, Courier, monospace;
+	 font-size: 85%;
+	 height: auto;
+	 margin: -0.2em 0;
+	 padding: 0.2em;
+	 text-indent: 0;
+	 width: auto;
+	 background: #2f3136;
+	 line-height: 1.3;
+	 user-select: text;
+	 white-space: pre-wrap;
+	 word-wrap: break-word; 
+} */
+ 
+</style>
+<div class="app">
+</div>
+<div class="chat-box">
+  <div class="message-group">
+    <div class="header-group">
+      <div class="avatar">
+        <img src="https://cdn.discordapp.com/avatars/601631265463992331/23fff38d19d5f448d1bf08816a8a6cb4.webp?size=256" alt="avatar" />
+      </div>
+      <div class="header">Aeternum<span class="timestamp">Today at 6:10 PM</span></div>
+
+    </div>
+    <div class="message">
+      <div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac nibh vel diam viverra aliquam. Donec auctor, velit vel dignissim dictum, dolor libero malesuada orci, in pulvinar quam massa quis quam. Nulla egestas quam eu ligula cursus interdum.
+        In leo magna, vulputate fermentum venenatis non, mattis eu sapien. Pellentesque dictum et turpis vitae facilisis. Praesent eu ullamcorper justo, vel fringilla felis. Mauris posuere euismod tempor.</div>
+    </div>
+    <hr class="divider" />
+  </div>
+ </div>

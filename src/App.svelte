@@ -4,6 +4,7 @@
     import Notifications from 'svelte-notifications';
     import { get } from 'svelte/store';
     import Rooms from './screens/rooms.svelte'
+    import Room from './screens/room.svelte'
     import Auth from './screens/auth.svelte'
     const routes = {
         '/': wrap(
@@ -22,6 +23,23 @@
         ),
         '/rooms' : wrap(
           Rooms,
+
+          (detail) => {
+            
+            var isAuth = localStorage.getItem('isAuth');
+            console.log(isAuth)
+            if (isAuth !==  'true') {
+              console.log("YOU SHALL NOT PASS");
+              return false
+
+            } else {
+            console.log("Get  in");
+              return true
+            }
+          }
+        ),
+        '/room' : wrap(
+          Room,
 
           (detail) => {
             

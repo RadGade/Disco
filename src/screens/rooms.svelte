@@ -22,14 +22,15 @@
 		open(
 			UserSettings,
 			{
-				message: "It's a customized popup!"
+				message: "morty"
 			},
 		  {
 				styleBg: {
 					background: 'rgba(39, 39, 39, 0.9);'
 				},
 				styleWindow: {
-                    background: '#3E3E3E'
+                    background: '#3E3E3E',
+					overflow: 'none'
 				},
 				transitionWindow: fly,
 				transitionWindowProps: {

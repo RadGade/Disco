@@ -2,6 +2,16 @@
     // your script goes here
     import { push } from 'svelte-spa-router';
     import Room from '../components/room.svelte';
+    import UserSettings from '../components/user-settings.svelte';
+    import { getContext } from 'svelte';
+    import { fly } from 'svelte/transition';
+
+    const { open } = getContext('simple-modal');
+	
+	let opening = false;
+	let opened = false;
+	let closing = false;
+	let closed = false;
     let rooms = []
 
     for (let i = 0; i < 5; i++) {
@@ -10,7 +20,7 @@
 
     	const showPopupCustom = () => {
 		open(
-			Popup,
+			UserSettings,
 			{
 				message: "It's a customized popup!"
 			},
@@ -19,7 +29,6 @@
 					background: 'rgba(39, 39, 39, 0.9);'
 				},
 				styleWindow: {
-					border: '2px solid #00beff',
                     background: '#3E3E3E'
 				},
 				transitionWindow: fly,

@@ -1,5 +1,6 @@
 <script>
-    import Router, {wrap, push, replace} from 'svelte-spa-router';
+	import Router, {wrap, push, replace} from 'svelte-spa-router';
+	  import Modal from 'svelte-simple-modal';
     import Notifications from 'svelte-notifications';
     import { get } from 'svelte/store';
     import Rooms from './screens/rooms.svelte'
@@ -56,7 +57,9 @@
 </style>
 
 <!-- markup (zero or more items) goes here -->
+<Modal>
 <Notifications>
     <Router {routes} on:conditionsFailed={conditionsFailed}/>
 </Notifications>
+</Modal>
 

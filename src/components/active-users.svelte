@@ -10,7 +10,7 @@
     function openNav() {
          isOpen = true
         console.log(isOpen)
-  document.getElementById("ver").style.width = "8rem";
+  document.getElementById("ver").style.width = "7em";
   document.getElementById("main").style.marginLeft = "8rem";
 }
 
@@ -29,9 +29,27 @@ function closeNav() {
         background: #656565;
         overflow:auto;
         max-height:100%;
+        height: 100vh;
+        position: absolute;
+        right: 0;
         overflow-x: hidden;
         transition: 0.5s;
     }
+
+     .users::-webkit-scrollbar {
+	 width: 7px;
+}
+ .users::-webkit-scrollbar-thumb, ::-webkit-scrollbar-track-piece {
+	 background-clip: padding-box;
+	 border-radius: 2px;
+	 background-clip: padding-box;
+}
+ .users::-webkit-scrollbar-thumb {
+	 background-color: #181a1c;
+}
+ .users::-webkit-scrollbar-track-piece {
+	 background-color: rgba(0, 0, 0, 0.25);
+}
 </style>
 
 <!-- markup (zero or more items) goes here -->

@@ -1,13 +1,16 @@
 <script>
-    // your script goes here
+        let msg = []
+
+    for (let i = 0; i < 20; i++) {
+        msg.push(i)
+    }
+
 </script>
 
 <style type="css">
 * {
-    position: absolute;
 	 margin: 0;
 	 font-family: "Roboto", sans-serif;
-     bottom: 10%;
 	 border: 0;
 	 font-size: 100%;
 	 font-style: inherit;
@@ -19,31 +22,43 @@
 	 transition: background-color 0.17s ease, color 0.17s ease;
 }
  .app {
-	 display: flex;
+	position: absolute;
+	width: 80%;
+	overflow:auto;
+	-ms-overflow-style: none;
+    height: 75%;
+	bottom: 0;
+	overflow-y: auto;
+	margin-bottom: 10%;
+    overflow-x: hidden;
+	
 }
  
  .chat-box {
-	 height: calc(100% - 48px);
+	 height: auto;
      width: 80%;
-	 overflow-y: auto;
-	 position: fixed;
+	 margin-bottom: 0;
 }
- .chat-box::-webkit-scrollbar {
+
+.app::-webkit-scrollbar {
+	display: none;
+}
+ /* .app::-webkit-scrollbar {
 	 width: 14px;
 	 position: absolute;
 }
- .chat-box::-webkit-scrollbar-thumb, ::-webkit-scrollbar-track-piece {
+ .app::-webkit-scrollbar-thumb, ::-webkit-scrollbar-track-piece {
 	 background-clip: padding-box;
 	 border: 2.5px solid #36393f;
 	 border-radius: 7px;
 	 background-clip: padding-box;
 }
- .chat-box::-webkit-scrollbar-thumb {
+ .app::-webkit-scrollbar-thumb {
 	 background-color: #181a1c;
 }
- .chat-box::-webkit-scrollbar-track-piece {
+ .app::-webkit-scrollbar-track-piece {
 	 background-color: rgba(0, 0, 0, 0.25);
-}
+} */
  .message-group {
 	 margin: 10px 20px;
 	 padding: 10px 1px;
@@ -103,12 +118,12 @@
  
 </style>
 <div class="app">
-</div>
+{#each msg as item}
 <div class="chat-box">
   <div class="message-group">
     <div class="header-group">
       <div class="avatar">
-        <img src="https://cdn.discordapp.com/avatars/601631265463992331/23fff38d19d5f448d1bf08816a8a6cb4.webp?size=256" alt="avatar" />
+        <img src="https://dustiidesign.com/wp-content/uploads/2017/01/PLEASE-REMAIN-CALM-6.png" alt="avatar" />
       </div>
       <div class="header">Aeternum<span class="timestamp">Today at 6:10 PM</span></div>
 
@@ -120,3 +135,5 @@
     <hr class="divider" />
   </div>
  </div>
+ {/each}
+</div>

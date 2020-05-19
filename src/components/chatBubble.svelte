@@ -23,13 +23,13 @@
 }
  .app {
 	position: absolute;
-	width: 80%;
+	width: 90%;
 	overflow:auto;
 	-ms-overflow-style: none;
     height: 75%;
 	bottom: 0;
 	overflow-y: auto;
-	margin-bottom: 10%;
+	margin-bottom: 7%;
     overflow-x: hidden;
 	
 }
@@ -37,6 +37,7 @@
  .chat-box {
 	 height: auto;
      width: 80%;
+	 text-align: justify;
 	 margin-bottom: 0;
 }
 

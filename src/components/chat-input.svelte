@@ -11,7 +11,7 @@ let message;
     color: white;
     border: none;
     position: absolute;
-    bottom: 5%;
+    bottom: 1%;
     margin-left: 2%;
     padding-left: 2%;
     padding-right: 2%;

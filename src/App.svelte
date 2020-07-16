@@ -1,3 +1,7 @@
+<svelte:head>
+  <script src="/lib/gun.js"></script>
+  <script src="/lib/sea.js"></script>
+</svelte:head>
 <script>
 	import Router, {wrap, push, replace} from 'svelte-spa-router';
 	  import Modal from 'svelte-simple-modal';
@@ -6,6 +10,11 @@
     import Rooms from './screens/rooms.svelte'
     import Room from './screens/room.svelte'
     import Auth from './screens/auth.svelte'
+    import './lib/gun'
+    import './lib/sea'
+
+
+
     const routes = {
         '/': wrap(
           Auth,
@@ -26,7 +35,7 @@
 
           (detail) => {
             
-            var isAuth = localStorage.getItem('isAuth');
+            var isAuth = window.sessionStorage.getItem('isAuth');
             console.log(isAuth)
             if (isAuth !==  'true') {
               console.log("YOU SHALL NOT PASS");
@@ -43,7 +52,7 @@
 
           (detail) => {
             
-            var isAuth = localStorage.getItem('isAuth');
+            var isAuth = window.sessionStorage.getItem('isAuth');
             console.log(isAuth)
             if (isAuth !==  'true') {
               console.log("YOU SHALL NOT PASS");

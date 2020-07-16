@@ -20,6 +20,9 @@ module.exports = {
 		filename: '[name].js',
 		chunkFilename: '[name].[id].js'
 	},
+	node: {
+		fs: 'empty'
+	  },
 	module: {
 		rules: [
 			{

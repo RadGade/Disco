@@ -1,18 +1,45 @@
 <script>
     // your script goes here
 import { push } from 'svelte-spa-router';
+import {init_user, login_user} from '../logic/init_user'
 import  { get } from 'svelte/store'
 let alias, pwd
 import { getNotificationsContext } from 'svelte-notifications';
 const { addNotification } = getNotificationsContext();
  async function login(){
   console.log(alias, pwd)
-await window.localStorage.setItem('isAuth', true);
-push('/rooms')
-}
+   login_user(alias, pwd)
+      .then( (user) => {
+        push('/rooms')
+        console.log(user)
+      })
+      .catch((err) => {
+        console.log(err)
+        addNotification({
+          id: 'uniqNotificationId',
+          text: err,
+          position: 'top-center',
+          type: 'danger',
+          removeAfter: 3000,
+        })
+      })
+  }
+
 
  async function register(){
-  console.log(alias, pwd)
+
+   init_user(alias, pwd).then(async user => {
+      console.log(user)
+  }).catch((err) => {
+     console.log(err)
+        addNotification({
+          id: 'uniqNotificationId',
+          text: err,
+          position: 'top-center',
+          type: 'danger',
+          removeAfter: 3000,
+        })
+      })
 }
 </script>
 

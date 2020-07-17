@@ -29,7 +29,7 @@ const { addNotification } = getNotificationsContext();
  async function register(){
 
    init_user(alias, pwd).then(async user => {
-      console.log(user)
+      push('/rooms')
   }).catch((err) => {
      console.log(err)
         addNotification({

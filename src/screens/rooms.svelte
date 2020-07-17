@@ -14,9 +14,7 @@
 	let closed = false;
     let rooms = []
 
-    for (let i = 0; i < 5; i++) {
-        rooms.push(i)
-    }
+
 
     	const showPopupCustom = () => {
 		open(

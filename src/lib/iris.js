@@ -1,11 +1,9 @@
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('gun')) :
+	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('./gun')) :
 	typeof define === 'function' && define.amd ? define(['gun'], factory) :
 	(global.iris = factory(global.Gun));
-}(this, (function (Gun) { 'use strict';
-
-	Gun = Gun && Gun.hasOwnProperty('default') ? Gun['default'] : Gun;
-
+}(this, (function () { 'use strict';
+console.log(Gun.SEA)
 	function unwrapExports (x) {
 		return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
 	}
@@ -8502,7 +8500,8 @@
 	    var urlRoot = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'https://iris.to/';
 	    var callback = arguments[3];
 	    var subscribe = arguments[4];
-
+		console.log(Gun.SEA)
+		console.log(key)
 	    var user = gun.user();
 	    user.auth(key);
 	    var mySecret = await Gun.SEA.secret(key.epub, key);

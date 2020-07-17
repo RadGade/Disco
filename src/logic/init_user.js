@@ -1,5 +1,5 @@
 import gun from "./__init__";
-import iris from "iris-lib";
+import iris from "../lib/iris";
 var user = gun.user()
 console.log(iris.VERSION)
 let key
@@ -11,8 +11,7 @@ async function init_user (alias, pass) {
           } else {
             console.log(user._.sea);
             await login_user(alias, pass)
-            createChatLink()
-            
+            createChatLink(user._.sea)
             return res(user._.sea);
           }
         });
@@ -34,7 +33,7 @@ async function login_user (alias, pass) {
                 window.sessionStorage.setItem("isAuth", true);
                 await iris.Channel.getMyChatLinks(gun, ack.sea, "http://localhost:8080/#/", chatLink => {
                   console.log(chatLink)
-                })  
+                });  
                 return res(ack);
               }
             });

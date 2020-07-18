@@ -2,7 +2,8 @@
     // your script goes here
     import { push } from 'svelte-spa-router';
     import Room from '../components/room.svelte';
-    import UserSettings from '../components/user-settings.svelte';
+	import UserSettings from '../components/user-settings.svelte';
+	import RoomsSettings from '../components/create-room.svelte';
     import { getContext } from 'svelte';
     import { fly } from 'svelte/transition';
 
@@ -23,6 +24,7 @@
 				message: "morty"
 			},
 		  {
+			  closeButton: false,
 				styleBg: {
 					background: 'rgba(39, 39, 39, 0.9);'
 				},
@@ -57,6 +59,47 @@
 		);
 	};
 	
+	    	const createRoom = () => {
+		open(
+			RoomsSettings,
+			{
+				message: "Room"
+			},
+		  {
+			  closeButton: false,
+				styleBg: {
+					background: 'rgba(39, 39, 39, 0.9);'
+				},
+				styleWindow: {
+                    background: '#3E3E3E',
+					overflow: 'none'
+				},
+				transitionWindow: fly,
+				transitionWindowProps: {
+					y: 100,
+					duration: 1000
+				},
+			},
+			{
+				onOpen: () => {
+					opening = true;
+				},
+				onOpened: () => {
+					opening = false;
+					opened = true;
+				},
+				onClose: () => {
+					opened = false;
+					closing = true;
+				},
+				onClosed: () => {
+					closing = false;
+					closed = true;
+					setTimeout(() => { closed = false; }, 1000);
+				}
+			}
+		);
+	};
 </script>
 
 <style>
@@ -88,7 +131,7 @@
     {/each}
   <div class="my-2 px-2 w-full overflow-hidden sm:my-2 sm:px-2 sm:w-full md:my-2 md:px-2 md:w-1/2 lg:my-2 lg:px-2 lg:w-1/3 xl:my-2 xl:px-2 xl:w-1/3">
     <!-- Column Content -->
-<button class="shadow bg-purple-500 hover:bg-purple-400 focus:outline-none text-white font-bold py-2 px-4 rounded my-24 mx-32" type="button">
+<button on:click={createRoom} class="shadow bg-purple-500 hover:bg-purple-400 focus:outline-none text-white font-bold py-2 px-4 rounded my-24 mx-32" type="button">
         Make a Room
       </button>
   </div>

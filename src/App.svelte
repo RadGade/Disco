@@ -18,14 +18,18 @@
     const routes = {
         '/': wrap(
           Auth,
+          
                   {hello: 'world', myFunc: () => {
             console.log('do something!')
         }},
 (detail) => {
+   var isAuth = window.localStorage.getItem('keys');
+  if (isAuth) {
+    push('/rooms')
+  }
                 // This pre-condition is executed only if the first one succeeded
                 // eslint-disable-next-line no-console
                 console.log('Pre-condition 2 executed', detail.location, detail.userData)
-
                 // Always succeed
                 return true
             }
@@ -35,9 +39,9 @@
 
           (detail) => {
             
-            var isAuth = window.sessionStorage.getItem('isAuth');
+            var isAuth = window.localStorage.getItem('keys');
             console.log(isAuth)
-            if (isAuth !==  'true') {
+            if (!isAuth) {
               console.log("YOU SHALL NOT PASS");
               return false
 
@@ -52,9 +56,9 @@
 
           (detail) => {
             
-            var isAuth = window.sessionStorage.getItem('isAuth');
+            var isAuth = window.localStorage.getItem('keys');
             console.log(isAuth)
-            if (isAuth !==  'true') {
+            if (!isAuth) {
               console.log("YOU SHALL NOT PASS");
               return false
 
